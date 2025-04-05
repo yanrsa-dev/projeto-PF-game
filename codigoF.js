@@ -42,3 +42,82 @@ function prepararCelulasFuncional() {
   
   window.onload = prepararCelulasFuncional;
 
+  // armazenar valores
+
+  // Jogador1
+
+  // Primeira Coluna J1
+  const J1Coluna1Linha1 = 0
+  const J1Coluna1Linha2 = 0
+  const J1Coluna1Linha3 = 0
+
+  //Segunda Coluna
+  const J1Coluna2Linha1 = 0
+  const J1Coluna2Linha2 = 0
+  const J1Coluna2Linha3 = 0
+
+  //Terceira Coluna
+  const J1Coluna3Linha1 = 0
+  const J1Coluna3Linha2 = 0
+  const J1Coluna3Linha3 = 0
+
+  // Jogador2
+
+  // Primeira Coluna J2
+  const J2Coluna1Linha1 = 0
+  const J2Coluna1Linha2 = 0
+  const J2Coluna1Linha3 = 0
+
+  //Segunda Coluna
+  const J2Coluna2Linha1 = 0
+  const J2Coluna2Linha2 = 0
+  const J2Coluna2Linha3 = 0
+
+  //Terceira Coluna
+  const J2Coluna3Linha1 = 0
+  const J2Coluna3Linha2 = 0
+  const J2Coluna3Linha3 = 0
+
+  //Função para Somar resultados
+
+  //JOGADOR 1
+
+  function Jogador1Resultado (
+    
+    J1Coluna1Linha1,J1Coluna1Linha2,J1Coluna1Linha3, // PRIMEIRA COLUNA
+    J1Coluna2Linha1,J1Coluna2Linha2,J1Coluna2Linha3, // SEGUNDA COLUNA
+    J1Coluna3Linha1,J1Coluna3Linha1,J1Coluna3Linha1, // TERCEIRA COLUNA
+
+  ) {
+
+    const calcularJ1 = 
+
+    (J1Coluna1Linha1+J1Coluna1Linha2+J1Coluna1Linha3) * 1 + 
+    (J1Coluna2Linha1+J1Coluna2Linha2+J1Coluna2Linha3) * 2 +
+    (J1Coluna3Linha+J1Coluna3Linha1+J1Coluna3Linha1) * 3;
+
+    return calcularJ1
+
+  }
+
+  //JOGADOR 2
+
+  function Jogador2Resultado (
+    
+    J2Coluna1Linha1,J2Coluna1Linha2,J2Coluna1Linha3, // PRIMEIRA COLUNA
+    J2Coluna2Linha1,J2Coluna2Linha2,J2Coluna2Linha3, // SEGUNDA COLUNA
+    J2Coluna3Linha1,J2Coluna3Linha1,J2Coluna3Linha1, // TERCEIRA COLUNA
+
+  ) {
+
+    const calcularJ2 = 
+
+    (J2Coluna1Linha1+J2Coluna1Linha2+J2Coluna1Linha3) * 1 + 
+    (J2Coluna2Linha1+J2Coluna2Linha2+J2Coluna2Linha3) * 2 +
+    (J2Coluna3Linha+J2Coluna3Linha1+J2Coluna3Linha1) * 3;
+
+    return calcularJ2
+
+  }
+
+
