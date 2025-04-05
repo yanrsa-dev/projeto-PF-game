@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* garante altura total da tela */
+    margin: 0;
+}
+
+header {
+    height: 80px;
+    background-color: #bc9900; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+#fontesecundaria {
+    color:#f1f1f1;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+}
+
+#titulo {
+    color: #f1f1f1;
+    font-size: 42px;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0 #ccc;
+}
+
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer {
+    background-color: #b99300;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    border-top: 2px solid #e1c800;
+}
+
+button {
+    background-color: #b99300;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e1c800;
+}

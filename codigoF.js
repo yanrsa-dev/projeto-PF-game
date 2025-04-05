@@ -15,3 +15,5 @@ const quemComeca = () => {
     },500)
 
     } // Função para decidir quem começa
+
+    

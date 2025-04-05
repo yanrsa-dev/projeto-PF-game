@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quem Começa</title>
+    <link rel="stylesheet" href="Visual.css">
 </head>
 <body>
-    
-    <h1>Jogador 1: <br><span id="numero1"></span></h1>
-    <h1>Jogador 2: <br><span id="numero2"></span></h1>
-    <button onclick="quemComeca()">Rolar Dados</button>
+    <header>
+        <h1 id="titulo">Jogo da Bugalha</h1>
+    </header>
+
+    <main>
+        <h2>Jogador 1:</h2>
+        <p><span id="numero1">-</span></p>
+
+        <h2>Jogador 2:</h2>
+        <p><span id="numero2">-</span></p>
+
+        <br>
+        <button onclick="quemComeca()">Rolar Dados</button>
+    </main>
+
+    <footer>
+        <p id="fontesecundaria">Alunos: Arthur Soares, Pedro Lucas, Yan de Sá</p>
+    </footer>
+
     <script src="codigoF.js"></script>
 </body>
 </html>
