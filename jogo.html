@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo da Bugalha</title>
+  <link rel="stylesheet" href="Visual.css" />
 </head>
-<body>
-    <h2>Numero Sorteado: <span id="saida"></span></h2>
-    <button onclick=
-    "document.getElementById('saida').innerHTML= '🎲...';
-    setTimeout(() =>{
-     document.getElementById('saida').innerHTML= dado([1,2,3,4,5,6]);
-    },200);">Rolar Novamente</button>
-    <h1>Jogador 1</h1><br>
-    <h1>Jogador 2</h1><br>
+
+<body style="background-color: #848484aa;">
+  <header>
+    <h1 id="titulo">Jogo da Bugalha</h1>
+  </header>
+
+  <main>
+    
+    <div class="centro">
+        <button onclick="document.getElementById('saida').innerHTML = '🎲';
+      setTimeout(() => {
+        document.getElementById('saida').innerHTML = dado([1,2,3,4,5,6]);
+      }, 200);" id="fontesecundaria" style="font-size: 24px;"
+
+        > Rolar Novamente </button>
+        
+  <h2 id="titulo2" style="margin-top: 10px;"
+  
+        > Número Sorteado: <span id="saida"></span></h2>
+
+    </div>
+
+    <div class="container-jogadores">
+      <div class="jogador">
+        <h2 class="nome-jogador" id="titulo2">Jogador 1</h2>
+        <div class="tabuleiro">
+          <div class="casa" id="j1c0"></div>
+          <div class="casa" id="j1c1"></div>
+          <div class="casa" id="j1c2"></div>
+          <div class="casa" id="j1c3"></div>
+          <div class="casa" id="j1c4"></div>
+          <div class="casa" id="j1c5"></div>
+          <div class="casa" id="j1c6"></div>
+          <div class="casa" id="j1c7"></div>
+          <div class="casa" id="j1c8"></div>
+        </div>
+      </div>
+
+      <div class="jogador">
+        <h2 class="nome-jogador" id="titulo2">Jogador 2</h2>
+        <div class="tabuleiro">
+          <div class="casa" id="j2c0"></div>
+          <div class="casa" id="j2c1"></div>
+          <div class="casa" id="j2c2"></div>
+          <div class="casa" id="j2c3"></div>
+          <div class="casa" id="j2c4"></div>
+          <div class="casa" id="j2c5"></div>
+          <div class="casa" id="j2c6"></div>
+          <div class="casa" id="j2c7"></div>
+          <div class="casa" id="j2c8"></div>
+        </div>
+      </div>
+    </div>
+
     <script src="codigoF.js"></script>
+  </main>
+
+  <footer>
+    <p id="fontesecundaria">Alunos: Arthur Soares, Pedro Lucas, Yan de Sá</p>
+  </footer>
 </body>
 </html>
