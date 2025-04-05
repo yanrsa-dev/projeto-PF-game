@@ -13,9 +13,11 @@
   </header>
 
   <main>
-    
+    <h1 id="mensagem"></h1>
     <div class="centro">
-        <button onclick="document.getElementById('saida').innerHTML = '🎲';
+        <button onclick="
+        document.getElementById('mensagem').innerText = '';
+        document.getElementById('saida').innerHTML = '🎲';
       setTimeout(() => {
         document.getElementById('saida').innerHTML = dado([1,2,3,4,5,6]);
       }, 200);" id="fontesecundaria" style="font-size: 24px;"
