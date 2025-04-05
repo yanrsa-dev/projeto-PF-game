@@ -10,7 +10,7 @@ const quemComeca = () => {
          const empate = (j1) => (j2) =>
             j1 === j2 ? (alert("Empate! Role novamente"), quemComeca()): // Caso de empate ele emite o alerta e rerola os dados dos jogadores
             (alert(j1 > j2 ? "Jogador 1 irá começar":"Jogador 2 irá começar"),
-            window.location.href = "jogo.html") // Redireciona para pagina do jogo
+            window.location.href = "jogo.html?primeiro="+(j1>j2? "jogador1":"jogador2")) // Redireciona para pagina do jogo
             empate(j1)(j2)
     },500)
 
