@@ -13,56 +13,74 @@
   </header>
 
   <main>
-    
+
     <div class="centro">
-      
-        <button onclick="
-        document.getElementById('mensagem').innerText = '';
-        document.getElementById('saida').innerHTML = '🎲';
-      setTimeout(() => {
-        document.getElementById('saida').innerHTML = dado([1,2,3,4,5,6]);
-      }, 200);" id="fontesecundaria" style="font-size: 24px;"
-        
-        > Rolar Novamente </button>
-        <h1 id="mensagem"></h1>
-  <h2 id="titulo2" style="margin-top: 10px;"
-        
-        > Número Sorteado: <span id="saida"></span></h2>
+      <button onclick="
+  document.getElementById('mensagem').innerText = '';
+  document.getElementById('saida').innerHTML = '🎲';
+  setTimeout(() => {
+    const numero = dado([1,2,3,4,5,6]);
+    document.getElementById('saida').innerHTML = numero;
+  }, 200);"
+  id="fontesecundaria" style="font-size: 24px;">
+  Rolar Novamente
+</button>
 
+      <h1 id="mensagem"></h1>
+      <h2 id="titulo2" style="margin-top: 10px;">
+        Número Sorteado: <span id="saida"></span>
+      </h2>
     </div>
-
-    <div class="container-jogadores">
+  
+    <!-- AGRUPANDO OS DOIS JOGADORES CORRETAMENTE -->
+    <div class="jogadores-container">
+  
       <div class="jogador">
         <h2 class="nome-jogador" id="titulo2">Jogador 1</h2>
-        <div class="tabuleiro">
-          <div class="casa" id="j1c0"></div>
-          <div class="casa" id="j1c1"></div>
-          <div class="casa" id="j1c2"></div>
-          <div class="casa" id="j1c3"></div>
-          <div class="casa" id="j1c4"></div>
-          <div class="casa" id="j1c5"></div>
-          <div class="casa" id="j1c6"></div>
-          <div class="casa" id="j1c7"></div>
-          <div class="casa" id="j1c8"></div>
+        <div class="tabuleiro-container">
+          <div class="tabuleiro">
+            <div class="numbercolunas" id="j1c0"></div>
+            <div class="numbercolunas" id="j1c1"></div>
+            <div class="numbercolunas" id="j1c2"></div>
+            <div class="numbercolunas" id="j1c3"></div>
+            <div class="numbercolunas" id="j1c4"></div>
+            <div class="numbercolunas" id="j1c5"></div>
+            <div class="numbercolunas" id="j1c6"></div>
+            <div class="numbercolunas" id="j1c7"></div>
+            <div class="numbercolunas" id="j1c8"></div>
+          </div>
+          <div class="numeros-colunas">
+            <span id="titulo2" style="font-size: 20px;">1</span>
+            <span id="titulo2" style="font-size: 20px;">2</span>
+            <span id="titulo2" style="font-size: 20px;">3</span>
+          </div>
         </div>
       </div>
-
+  
       <div class="jogador">
         <h2 class="nome-jogador" id="titulo2">Jogador 2</h2>
-        <div class="tabuleiro">
-          <div class="casa" id="j2c0"></div>
-          <div class="casa" id="j2c1"></div>
-          <div class="casa" id="j2c2"></div>
-          <div class="casa" id="j2c3"></div>
-          <div class="casa" id="j2c4"></div>
-          <div class="casa" id="j2c5"></div>
-          <div class="casa" id="j2c6"></div>
-          <div class="casa" id="j2c7"></div>
-          <div class="casa" id="j2c8"></div>
+        <div class="tabuleiro-container">
+          <div class="tabuleiro">
+            <div class="numbercolunas" id="j2c0"></div>
+            <div class="numbercolunas" id="j2c1"></div>
+            <div class="numbercolunas" id="j2c2"></div>
+            <div class="numbercolunas" id="j2c3"></div>
+            <div class="numbercolunas" id="j2c4"></div>
+            <div class="numbercolunas" id="j2c5"></div>
+            <div class="numbercolunas" id="j2c6"></div>
+            <div class="numbercolunas" id="j2c7"></div>
+            <div class="numbercolunas" id="j2c8"></div>
+          </div>
+          <div class="numeros-colunas">
+            <span id="titulo2" style="font-size: 20px;">1</span>
+            <span id="titulo2" style="font-size: 20px;">2</span>
+            <span id="titulo2" style="font-size: 20px;">3</span>
+          </div>
         </div>
       </div>
-    </div>
-
+  
+    </div> <!-- fim jogadores-container -->
+  
     <script src="codigoF.js"></script>
   </main>
 

@@ -1,5 +1,6 @@
 const dado = (numeros) => numeros[Math.floor(Math.random()* numeros.length)] // Uma função que pega uma lista com 6 numeros do dados e sorteia para retornar 1 valor
 
+let numeroSorteadoAtual = null; // valor sorteado atual
 
 const quemComeca = () => {
     const j1 = dado([1, 2, 3, 4, 5, 6])
@@ -19,5 +20,23 @@ const quemComeca = () => {
     const params = new URLSearchParams(window.location.search)
     const primeiro = params.get("primeiro")
     document.getElementById("mensagem").innerText = 
-    primeiro ? `O ${primeiro} começa o jogo!` : "Erro: Jogador não definido."
-},0) // Decidi armazenar a informação no URL
+    primeiro ? `O ${primeiro} começa o jogo!` : "Erro: Jogador não definido."; document.getElementById("mensagem").classList.add("titulo2JS")
+},0) // Decidi armazenar a informação no URL 
+
+// Função para preparar todas as células com click
+function prepararCelulasFuncional() {
+    const celulas = document.querySelectorAll('.numbercolunas');
+    celulas.forEach(celula => {
+      celula.onclick = () => {
+        const valor = document.getElementById('saida').innerText;
+        if (valor && valor !== "🎲" && celula.innerText === "") {
+          const numero = parseInt(valor); // define uma const imutável
+          celula.innerHTML = `<span class="titulo2JS" style="display:flex;justify-content:center;align-items:center;height:100%;width:100%">${numero}</span>`;
+          document.getElementById('saida').innerHTML = ""; // limpa o número após uso
+        }
+      };
+    });
+  }
+  
+  window.onload = prepararCelulasFuncional;
+
