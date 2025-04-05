@@ -10,10 +10,15 @@ const quemComeca = () => {
          const empate = (j1) => (j2) =>
             j1 === j2 ? (alert("Empate! Role novamente"), quemComeca()): // Caso de empate ele emite o alerta e rerola os dados dos jogadores
             (alert(j1 > j2 ? "Jogador 1 irá começar":"Jogador 2 irá começar"),
-            window.location.href = "jogo.html?primeiro="+(j1>j2? "jogador1":"jogador2")) // Redireciona para pagina do jogo
+            window.location.href = "jogo.html?primeiro="+(j1>j2? "Jogador 1":"Jogador 2")) // Redireciona para pagina do jogo
             empate(j1)(j2)
     },500)
 
     } // Função para decidir quem começa
-
+    setTimeout(() => {
+    const params = new URLSearchParams(window.location.search)
+    const primeiro = params.get("primeiro")
+    document.getElementById("mensagem").innerText = 
+    primeiro ? `O ${primeiro} começa o jogo!` : "Erro: Jogador não definido."
+},500)
     
