@@ -30,14 +30,34 @@
     <h1 id="titulo2">Como Jogar</h1>
 
     <h2 id="fontesecundaria2">1ª Sua pontuação é calculada pela soma de todos os seus dados;</h2><br>
-    <h2 id="fontesecundaria2">2ª Quando dados com o mesmo número são posicionados na mesma ordem o valor é mutiplicado;</h2><br>
-    <h2 id="fontesecundaria2">3ª Quando colocado um dado na mesma linha do oponente se o numero for igual o numero do oponente sai;</h2><br>
+    <h2 id="fontesecundaria2">2ª Cada coluna tem um multiplicador;</h2><br>
+    <h2 id="fontesecundaria2">3ª Os números da primeira coluna serão somados e multiplicados por 1, o da segunda coluna por 2 e o da terceira coluna por 3;</h2><br>
 
     <h1 id="titulo2">Quem começa</h1>
-    <h2 id="fontesecundaria2">Os dois jogadores irão rolar o dado e o jogador que tirar o maior numero começa.</h2><br><br>
+    <h2 id="fontesecundaria2">Os dois jogadores irão rolar o dado e o jogador que tirar o maior numero começa.</h2>
     
     <!--   Enviar para outra página -->
-    <a href="começo.html"> <button>Iniciar</button> </a>
+
+    <div style="
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* ajuste conforme o tamanho da caixa desejado */
+">
+  <button 
+    onclick="location.href='começo.html'"
+    style="
+      font-size: 30px;
+      background-color: #b99300;
+      color: white;
+      padding: 15px 40px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    ">
+    Iniciar
+  </button>
+</div>
 
     </main>
 
