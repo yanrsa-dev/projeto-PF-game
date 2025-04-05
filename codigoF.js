@@ -20,3 +20,4 @@ const quemComeca = () => {
     const primeiro = params.get("primeiro")
     document.getElementById("mensagem").innerText = 
     primeiro ? `O ${primeiro} começa o jogo!` : "Erro: Jogador não definido."
+},0) // Decidi armazenar a informação no URL
