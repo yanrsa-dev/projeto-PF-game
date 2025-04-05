@@ -7,15 +7,16 @@ const quemComeca = () => {
     const j2 = dado([1, 2, 3, 4, 5, 6])
     document.getElementById('numero1').innerHTML = j1; 
     document.getElementById('numero2').innerHTML = j2;
+
     setTimeout(() => {
          const empate = (j1) => (j2) =>
             j1 === j2 ? (alert("Empate! Role novamente"), quemComeca()): // Caso de empate ele emite o alerta e rerola os dados dos jogadores
             (alert(j1 > j2 ? "Jogador 1 irá começar":"Jogador 2 irá começar"),
             window.location.href = "jogo.html?primeiro="+(j1>j2? "Jogador 1":"Jogador 2")) // Redireciona para pagina do jogo
-            empate(j1)(j2)
-    },200)
-
-    } // Função para decidir quem começa
+            empate(j1)(j2)},200)
+    } 
+    
+    // Função para decidir quem começa
     setTimeout(() => {
     const params = new URLSearchParams(window.location.search)
     const primeiro = params.get("primeiro")
@@ -24,6 +25,7 @@ const quemComeca = () => {
 },0) // Decidi armazenar a informação no URL 
 
 // Função para preparar todas as células com click
+
 function prepararCelulasFuncional() {
     const celulas = document.querySelectorAll('.numbercolunas');
     celulas.forEach(celula => {
