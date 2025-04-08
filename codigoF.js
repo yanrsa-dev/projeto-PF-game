@@ -1,7 +1,5 @@
 const dado = (numeros) => numeros[Math.floor(Math.random()* numeros.length)] // Uma função que pega uma lista com 6 numeros do dados e sorteia para retornar 1 valor
 
-let numeroSorteadoAtual = null; // valor sorteado atual
-
 const quemComeca = () => {
     const j1 = dado([1, 2, 3, 4, 5, 6])
     const j2 = dado([1, 2, 3, 4, 5, 6])
@@ -83,9 +81,9 @@ function prepararCelulasFuncional() {
   //JOGADOR 1
 const Jogador1Resultado=
     
-    [J1Coluna1Linha1,J1Coluna1Linha2,J1Coluna1Linha3, // PRIMEIRA COLUNA=Jogador1Resultado[0][1][2]
-    J1Coluna2Linha1,J1Coluna2Linha2,J1Coluna2Linha3, // SEGUNDA COLUNA=Jogador1Resultado[3][4][5]
-    J1Coluna3Linha1,J1Coluna3Linha2,J1Coluna3Linha3] // TERCEIRA COLUNA=Jogador1Resultado[6][7][8]
+[J1Coluna1Linha1,J1Coluna1Linha2,J1Coluna1Linha3, // PRIMEIRA COLUNA=Jogador1Resultado[0][1][2]
+J1Coluna2Linha1,J1Coluna2Linha2,J1Coluna2Linha3, // SEGUNDA COLUNA=Jogador1Resultado[3][4][5]
+J1Coluna3Linha1,J1Coluna3Linha2,J1Coluna3Linha3] // TERCEIRA COLUNA=Jogador1Resultado[6][7][8]
 
  
 
@@ -114,9 +112,3 @@ const J2SomaColuna2= (J2Coluna1.reduce((acc,x)=> acc+x))*2// função que soma e
 const J2Coluna3= Jogador2Resultado.slice([6])// função que separa a coluna 3
 const J2SomaColuna3= (J2Coluna1.reduce((acc,x)=> acc+x))*3// função que soma e multiplica a coluna 3
 const PontuaçãoJ2= J2SomaColuna1+J2SomaColuna2+J2SomaColuna3// função que soma as somas parciais das colunas 1,2 e 3 dando a pontuação final do jogador 2
-
-
-
-
-
-
