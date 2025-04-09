@@ -1,114 +1,120 @@
-const dado = (numeros) => numeros[Math.floor(Math.random()* numeros.length)] // Uma função que pega uma lista com 6 numeros do dados e sorteia para retornar 1 valor
+// função que pega uma lista com 6 numeros do dados e sorteia para retornar 1 valor
+const dado = (numeros) => numeros[Math.floor(Math.random() * numeros.length)] 
 
+// função que decide quem começa a jogar
 const quemComeca = () => {
-    const j1 = dado([1, 2, 3, 4, 5, 6])
-    const j2 = dado([1, 2, 3, 4, 5, 6])
-    document.getElementById('numero1').innerHTML = j1; 
-    document.getElementById('numero2').innerHTML = j2;
+  const j1 = dado([1, 2, 3, 4, 5, 6])
+  const j2 = dado([1, 2, 3, 4, 5, 6])
+  document.getElementById('numero1').innerHTML = j1;
+  document.getElementById('numero2').innerHTML = j2;
 
-    setTimeout(() => {
-         const empate = (j1) => (j2) =>
-            j1 === j2 ? (alert("Empate! Role novamente"), quemComeca()): // Caso de empate ele emite o alerta e rerola os dados dos jogadores
-            (alert(j1 > j2 ? "Jogador 1 irá começar":"Jogador 2 irá começar"),
-            window.location.href = "jogo.html?primeiro="+(j1>j2? "Jogador 1":"Jogador 2")) // Redireciona para pagina do jogo
-            empate(j1)(j2)},200)
-    } 
-    
-    // Função para decidir quem começa
-    setTimeout(() => {
-    const params = new URLSearchParams(window.location.search)
-    const primeiro = params.get("primeiro")
-    document.getElementById("mensagem").innerText = 
+  setTimeout(() => {
+    const empate = (j1) => (j2) =>
+      j1 === j2 ? (alert("Empate! Role novamente"), quemComeca()) : // Caso de empate ele emite o alerta e rola os dados novamente 
+        (alert(j1 > j2 ? "Jogador 1 irá começar" : "Jogador 2 irá começar"),
+          window.location.href = "jogo.html?primeiro=" + (j1 > j2 ? "Jogador 1" : "Jogador 2")) // Redireciona para pagina do jogo
+    empate(j1)(j2)
+  }, 200)
+}
+
+// função para decidir quem começa
+setTimeout(() => {
+  const params = new URLSearchParams(window.location.search)
+  const primeiro = params.get("primeiro")
+  document.getElementById("mensagem").innerText =
     primeiro ? `O ${primeiro} começa o jogo!` : "Erro: Jogador não definido."; document.getElementById("mensagem").classList.add("titulo2JS")
-},0) // Decidi armazenar a informação no URL 
+}, 0) // Decidi armazenar a informação no URL 
 
-// Função para preparar todas as células com click
+// função que prepara todas as células com click
 
 function prepararCelulasFuncional() {
-    const celulas = document.querySelectorAll('.numbercolunas');
-    celulas.forEach(celula => {
-      celula.onclick = () => {
-        const valor = document.getElementById('saida').innerText;
-        if (valor && valor !== "🎲" && celula.innerText === "") {
-          const numero = parseInt(valor); // define uma const imutável
-          celula.innerHTML = `<span class="titulo2JS" style="display:flex;justify-content:center;align-items:center;height:100%;width:100%">${numero}</span>`;
-          document.getElementById('saida').innerHTML = ""; // limpa o número após uso
+  const celulas = document.querySelectorAll('.numbercolunas');
+  celulas.forEach(celula => {
+    celula.onclick = () => {
+      const valor = document.getElementById('saida').innerText;
+      if (valor && valor !== "🎲" && celula.innerText === "") {
+        const numero = parseInt(valor); // define uma const imutável
+        celula.innerHTML = `<span class="titulo2JS" style="display:flex;justify-content:center;align-items:center;height:100%;width:100%">${numero}</span>`;
+        document.getElementById('saida').innerHTML = ""; // limpa o número após uso
+        if (todasAsCelulasCompletas()) {
+          anunciarVencedor();
         }
-      };
-    });
-  }
-  
-  window.onload = prepararCelulasFuncional;
-
-  // armazenar valores
-
-  // Jogador1
-
-  // Primeira Coluna J1
-  const J1Coluna1Linha1 = 0
-  const J1Coluna1Linha2 = 0
-  const J1Coluna1Linha3 = 0
-
-  //Segunda Coluna
-  const J1Coluna2Linha1 = 0
-  const J1Coluna2Linha2 = 0
-  const J1Coluna2Linha3 = 0
-
-  //Terceira Coluna
-  const J1Coluna3Linha1 = 0
-  const J1Coluna3Linha2 = 0
-  const J1Coluna3Linha3 = 0
-
-  // Jogador2
-
-  // Primeira Coluna J2
-  const J2Coluna1Linha1 = 0
-  const J2Coluna1Linha2 = 0
-  const J2Coluna1Linha3 = 0
-
-  //Segunda Coluna
-  const J2Coluna2Linha1 = 0
-  const J2Coluna2Linha2 = 0
-  const J2Coluna2Linha3 = 0
-
-  //Terceira Coluna
-  const J2Coluna3Linha1 = 0
-  const J2Coluna3Linha2 = 0
-  const J2Coluna3Linha3 = 0
-
-  //Função para Somar resultados
-
-  //JOGADOR 1
-const Jogador1Resultado=
-    
-[J1Coluna1Linha1,J1Coluna1Linha2,J1Coluna1Linha3, // PRIMEIRA COLUNA=Jogador1Resultado[0][1][2]
-J1Coluna2Linha1,J1Coluna2Linha2,J1Coluna2Linha3, // SEGUNDA COLUNA=Jogador1Resultado[3][4][5]
-J1Coluna3Linha1,J1Coluna3Linha2,J1Coluna3Linha3] // TERCEIRA COLUNA=Jogador1Resultado[6][7][8]
-
- 
-
-const J1Coluna1= Jogador1Resultado.slice([0],[3])// função que separa a coluna 1
-const J1SomaColuna1= J1Coluna1.reduce((acc,x)=> acc+x)// função que soma e multiplica a coluna 1
-const J1Coluna2= Jogador1Resultado.slice([3],[6])// função que separa a coluna 2
-const J1SomaColuna2= (J1Coluna1.reduce((acc,x)=> acc+x))*2// função que soma e multiplica a coluna 2
-const J1Coluna3= Jogador1Resultado.slice([6])// função que separa a coluna 3
-const J1SomaColuna3= (J1Coluna1.reduce((acc,x)=> acc+x))*3// função que soma e multiplica a coluna 3
-const PontuaçãoJ1= J1SomaColuna1+J1SomaColuna2+J1SomaColuna3// função que soma as somas parciais das colunas 1,2 e 3 dando a pontuação final do jogador 1
+      }
+    };
+  });
+}
 
 
+window.onload = prepararCelulasFuncional;
 
 
-  //JOGADOR 2
-const Jogador2Resultado=
-    
-    [J2Coluna1Linha1,J2Coluna1Linha2,J2Coluna1Linha3, // PRIMEIRA COLUNA=Jogador2Resultado[0][1][2]
-    J2Coluna2Linha1,J2Coluna2Linha2,J2Coluna2Linha3, // SEGUNDA COLUNA=Jogador2Resultado[3][4][5]
-    J2Coluna3Linha1,J1Coluna3Linha2,J2Coluna3Linha3] // TERCEIRA COLUNA=Jogador2Resultado[6][7][8]
+// função para calcular a pontuação do Jogador 1
+const calcularPontuacaoJ1 = () => {
+  return (
+    (parseInt(document.getElementById("j1c0").innerText, 10) +
+      parseInt(document.getElementById("j1c3").innerText, 10) +
+      parseInt(document.getElementById("j1c6").innerText, 10)) * 1 +
+    (parseInt(document.getElementById("j1c1").innerText, 10) +
+      parseInt(document.getElementById("j1c4").innerText, 10) +
+      parseInt(document.getElementById("j1c7").innerText, 10)) * 2 +
+    (parseInt(document.getElementById("j1c2").innerText, 10) +
+      parseInt(document.getElementById("j1c5").innerText, 10) +
+      parseInt(document.getElementById("j1c8").innerText, 10)) * 3
+  );
+}
 
-const J2Coluna1= Jogador2Resultado.slice([0],[3])// função que separa a coluna 1
-const J2SomaColuna1= J2Coluna1.reduce((acc,x)=> acc+x)// função que soma e multiplica a coluna 1
-const J2Coluna2= Jogador2Resultado.slice([3],[6])// função que separa a coluna 2
-const J2SomaColuna2= (J2Coluna1.reduce((acc,x)=> acc+x))*2// função que soma e multiplica a coluna 2
-const J2Coluna3= Jogador2Resultado.slice([6])// função que separa a coluna 3
-const J2SomaColuna3= (J2Coluna1.reduce((acc,x)=> acc+x))*3// função que soma e multiplica a coluna 3
-const PontuaçãoJ2= J2SomaColuna1+J2SomaColuna2+J2SomaColuna3// função que soma as somas parciais das colunas 1,2 e 3 dando a pontuação final do jogador 2
+// função que calcula a pontuação do Jogador 2
+const calcularPontuacaoJ2 = () => {
+  return (
+    (parseInt(document.getElementById("j2c0").innerText, 10) +
+      parseInt(document.getElementById("j2c3").innerText, 10) +
+      parseInt(document.getElementById("j2c6").innerText, 10)) * 1 +
+    (parseInt(document.getElementById("j2c1").innerText, 10) +
+      parseInt(document.getElementById("j2c4").innerText, 10) +
+      parseInt(document.getElementById("j2c7").innerText, 10)) * 2 +
+    (parseInt(document.getElementById("j2c2").innerText, 10) +
+      parseInt(document.getElementById("j2c5").innerText, 10) +
+      parseInt(document.getElementById("j2c8").innerText, 10)) * 3
+  );
+}
+
+// função que verifica o preenchimento das celulas
+const todasAsCelulasCompletas = () => {
+  const j1Completo = Array.from(document.querySelectorAll('#j1c0, #j1c1, #j1c2, #j1c3, #j1c4, #j1c5, #j1c6, #j1c7, #j1c8')).every(celula => celula.innerText !== "");
+  const j2Completo = Array.from(document.querySelectorAll('#j2c0, #j2c1, #j2c2, #j2c3, #j2c4, #j2c5, #j2c6, #j2c7, #j2c8')).every(celula => celula.innerText !== "");
+  return j1Completo && j2Completo;
+}
+
+// função para anunciar o vencedor
+const anunciarVencedor = () => {
+  const resultadoJ1 = calcularPontuacaoJ1();
+  const resultadoJ2 = calcularPontuacaoJ2();
+
+  const vencedor = resultadoJ1 > resultadoJ2 ? "Jogador 1 é o vencedor!" :
+    resultadoJ2 > resultadoJ1 ? "Jogador 2 é o vencedor!" :
+      "Empate!";
+
+  // exibindo a pontuação e vencedor
+  document.getElementById("resultadoJ1").innerText = "Pontuação Jogador 1: " + resultadoJ1;
+  document.getElementById("resultadoJ2").innerText = "Pontuação Jogador 2: " + resultadoJ2;
+  document.getElementById("vencedor").innerText = vencedor;
+
+  // mostrando o botão de voltar
+  document.getElementById("botaoVoltar").style.display = "block";
+}
+
+// função para voltar à tela inicial
+const voltarParaTelaInicial = () => {
+  window.location.href = 'paginaIni.html';
+}
+
+
+// função para iniciar o jogo
+const iniciarJogo = () => {
+  window.location.href = 'PaginaIni.html'; // Redireciona para a página do jogo
+}
+
+// preparando as células do jogo
+if (document.location.href.includes('PaginaIni.html')) {
+  prepararCelulasFuncional();
+}
