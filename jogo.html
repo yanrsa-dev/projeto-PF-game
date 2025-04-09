@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jogo da Bugalha</title>
   <link rel="stylesheet" href="Visual.css" />
 </head>
@@ -21,20 +22,19 @@
   setTimeout(() => {
     const numero = dado([1,2,3,4,5,6]);
     document.getElementById('saida').innerHTML = numero;
-  }, 200);"
-  id="fontesecundaria" style="font-size: 24px;">
-  Rolar Novamente
-</button>
+  }, 200);" id="fontesecundaria" style="font-size: 24px;">
+        Rolar Novamente
+      </button>
 
       <h1 id="mensagem"></h1>
       <h2 id="titulo2" style="margin-top: 10px;">
         Número Sorteado: <span id="saida"></span>
       </h2>
     </div>
-  
+
     <!-- AGRUPANDO OS DOIS JOGADORES CORRETAMENTE -->
     <div class="jogadores-container">
-  
+
       <div class="jogador">
         <h2 class="nome-jogador" id="titulo2">Jogador 1</h2>
         <div class="tabuleiro-container">
@@ -56,7 +56,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="jogador">
         <h2 class="nome-jogador" id="titulo2">Jogador 2</h2>
         <div class="tabuleiro-container">
@@ -78,9 +78,19 @@
           </div>
         </div>
       </div>
-  
     </div> <!-- fim jogadores-container -->
-  
+
+    <!-- Exibindo a pontuação dos jogadores e vencedor -->
+    <div id="resultadoJ1" style="font-size: 16px; margin-top: 20px; font-family: 'Open Sans', 'Helvetica', sans-serif; font-weight: bold;"></div>
+    <div id="resultadoJ2" style="font-size: 16px; margin-top: 10px; font-family: 'Open Sans', 'Helvetica', sans-serif;font-weight: bold;"></div>
+    <div id="vencedor" style="font-size: 20px; color: green; margin-top: 20px; font-family: 'Open Sans', 'Helvetica', sans-serif;font-weight: bold;"></div>
+
+    <!-- Botão de Voltar à Tela Inicial, inicialmente invisível -->
+    <div id="botaoVoltar" style="display:none; margin-top: 20px;">
+      <button onclick="voltarParaTelaInicial()" id="fontesecundaria" style="font-size: 24px;">Voltar à Tela
+        Inicial</button>
+    </div>
+
     <script src="codigoF.js"></script>
   </main>
 
@@ -88,4 +98,5 @@
     <p id="fontesecundaria">Alunos: Arthur Soares, Pedro Lucas, Yan de Sá</p>
   </footer>
 </body>
+
 </html>
