@@ -105,16 +105,16 @@ const anunciarVencedor = () => {
 
 // função para voltar à tela inicial
 const voltarParaTelaInicial = () => {
-  window.location.href = 'paginaIni.html';
+  window.location.href = 'index.html';
 }
 
 
 // função para iniciar o jogo
 const iniciarJogo = () => {
-  window.location.href = 'PaginaIni.html'; // Redireciona para a página do jogo
+  window.location.href = 'index.html'; // Redireciona para a página do jogo
 }
 
 // preparando as células do jogo
-if (document.location.href.includes('PaginaIni.html')) {
+if (document.location.href.includes('index.html')) {
   prepararCelulasFuncional();
 }
